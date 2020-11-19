@@ -696,6 +696,13 @@ test(
 );
 
 test(
+  'nested var level (3rd-level) (#77, cssnano#880)',
+  testValue,
+  'calc(var(--xxx, var(--yyy, var(---zzz))) / 2)',
+  'calc(var(--xxx, var(--yyy, var(---zzz)))/2)',
+);
+
+test(
   'should not throw an exception when unknow function exist in calc',
   testValue,
   'calc(unknown(#fff) - other-unknown(200px))',
